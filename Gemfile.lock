@@ -1,0 +1,12 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    listener (0.1.0)
+      pg
+    pg (0.18.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  listener

@@ -11,9 +11,10 @@ listener = Listen.to(source, only: /\.less$/) { |modified, added, removed|
   original_file = File.basename original
   compiled_file = original_file.gsub(/less$/, "css")
   compiled = File.expand_path  File.join(target, compiled_file)
-  source_map = compiled + ".map"
+  source_map = compiled_file + ".map"
 
   puts "Recompiling: #{original} to #{compiled} (minified, with source map)"
+  puts "Command: lessc -x --source-map=#{source_map} #{original} > #{compiled}"
 
   `lessc -x --source-map=#{source_map} #{original} > #{compiled}`
 }
